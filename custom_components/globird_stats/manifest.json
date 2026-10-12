@@ -1,0 +1,11 @@
+{
+  "domain": "globird_stats",
+  "name": "GloBird energy statistics",
+  "codeowners": [],
+  "after_dependencies": ["globird_ha"],
+  "dependencies": ["recorder"],
+  "documentation": "https://github.com/davidar",
+  "iot_class": "calculated",
+  "requirements": [],
+  "version": "0.1.0"
+}
