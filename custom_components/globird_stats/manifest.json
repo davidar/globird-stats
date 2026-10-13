@@ -1,11 +1,13 @@
 {
   "domain": "globird_stats",
-  "name": "GloBird energy statistics",
-  "codeowners": [],
-  "after_dependencies": ["globird_ha"],
+  "name": "GloBird Energy",
+  "codeowners": ["@davidar"],
+  "config_flow": true,
   "dependencies": ["recorder"],
-  "documentation": "https://github.com/davidar",
-  "iot_class": "calculated",
+  "documentation": "https://github.com/davidar/globird-stats",
+  "integration_type": "service",
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/davidar/globird-stats/issues",
   "requirements": [],
-  "version": "0.1.0"
+  "version": "0.2.0"
 }

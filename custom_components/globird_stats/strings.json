@@ -1,0 +1,50 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "GloBird Energy",
+        "description": "Log in with the email and password you use for the GloBird Energy customer portal.",
+        "data": {
+          "email": "Email",
+          "password": "Password"
+        },
+        "data_description": {
+          "email": "The email address of your GloBird portal login.",
+          "password": "Your GloBird portal password. It is sent to the portal only, encrypted with the portal's public key."
+        }
+      },
+      "reauth_confirm": {
+        "title": "Log in to GloBird Energy again",
+        "description": "The GloBird portal no longer accepts the stored login for {email}. Enter the password again.",
+        "data": {
+          "password": "Password"
+        },
+        "data_description": {
+          "password": "Your current GloBird portal password."
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "The portal rejected the email or password.",
+      "captcha_required": "The portal is asking for a captcha. Log in once on the GloBird website in a browser, then try again.",
+      "cannot_connect": "Could not reach the GloBird portal.",
+      "no_accounts": "This login has no GloBird accounts.",
+      "unknown": "Unexpected error."
+    },
+    "abort": {
+      "already_configured": "This GloBird account is already configured.",
+      "reauth_successful": "Login updated.",
+      "wrong_account": "That login belongs to a different GloBird account."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "balance": {
+        "name": "Balance"
+      },
+      "latest_data_day": {
+        "name": "Latest data day"
+      }
+    }
+  }
+}
