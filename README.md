@@ -4,8 +4,8 @@ A small Home Assistant integration for [GloBird Energy](https://www.globirdenerg
 electricity meter. It logs in to the GloBird customer portal, reads the half-hourly meter data and daily costs the
 portal exposes, and writes them as hourly **Energy dashboard** statistics. It also provides an account balance sensor.
 
-It deliberately does one thing: the Energy dashboard. For a full set of portal sensors see
-[bolagnaise/globird-ha](https://github.com/bolagnaise/globird-ha), which this integration does not depend on.
+It deliberately does one thing: the Energy dashboard. See [Why another GloBird integration?](#why-another-globird-integration)
+if you already use one of the others.
 
 ## What you get
 
@@ -18,6 +18,22 @@ It deliberately does one thing: the Energy dashboard. For a full set of portal s
 
 One pair of statistics is created per electricity service with a smart meter. Gas services and basic
 (manually read) meters are skipped.
+
+## Why another GloBird integration?
+
+Two other integrations read the same portal: [bolagnaise/globird-ha](https://github.com/bolagnaise/globird-ha) and
+[tinkerologie/ha-globird](https://github.com/tinkerologie/ha-globird). Both cover the portal broadly: account and
+invoice sensors, ZeroHero status, gas, weather, and a long list of per-service sensors. If that is what you want, use
+one of them.
+
+This one exists for the Energy dashboard's hour-by-hour view. The portal publishes half-hourly meter reads, and this
+integration writes them as **hourly** long-term statistics with a matching hourly cost series, so the dashboard shows
+when the power was used during the day and what that hour cost. The other two feed the Energy dashboard with one value
+per day (a daily statistic row, or a sensor that carries the day's or the window's total), which gives correct daily and
+monthly totals but no shape within the day. Beyond the statistics it adds only the balance and latest-complete-day
+sensors, and it is small enough to read in one sitting.
+
+It uses its own domain and statistic ids, so it can run alongside either of the others.
 
 ## Installation
 
